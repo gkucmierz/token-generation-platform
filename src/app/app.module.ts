@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MdSidenavModule } from '@angular/material';
+import { MdListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -33,6 +35,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MdButtonModule,
     MdCheckboxModule,
+    MdSidenavModule,
+    MdListModule,
     
     RouterModule.forRoot(
       appRoutes,
