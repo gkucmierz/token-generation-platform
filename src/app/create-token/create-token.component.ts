@@ -21,6 +21,14 @@ export class CreateTokenComponent implements OnInit {
     this.initialSupplyHolderDisabled = this.initialSupply === 0;
   }
 
+  reset() {
+    this.tokenName = null;
+    this.tokenSymbol = null;
+    this.decimals = null;
+    this.initialSupply = null;
+    this.initialSupplyHolder = null;
+  }
+
   ngOnInit() {
   }
 
