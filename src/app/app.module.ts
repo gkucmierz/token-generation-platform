@@ -7,6 +7,7 @@ import { MdSidenavModule } from '@angular/material';
 import { MdListModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -41,10 +42,11 @@ const appRoutes: Routes = [
     MdListModule,
     MdInputModule,
     MdCardModule,
+    FormsModule,
 
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
+      // { enableTracing: true } // <-- debugging purposes only
     )
   ],
   providers: [],

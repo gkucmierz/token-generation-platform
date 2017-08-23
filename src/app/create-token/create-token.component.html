@@ -6,23 +6,23 @@
 
   <md-card-content>
     <md-input-container class="full-width">
-      <input mdInput placeholder="Token Name">
+      <input [(ngModel)]="tokenName" mdInput placeholder="Token Name">
     </md-input-container>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="Token Symbol" maxlength="5">
+      <input [(ngModel)]="tokenSymbol" mdInput placeholder="Token Symbol" maxlength="5">
     </md-input-container>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="Decimals" type="number" max="18" step="1" min="0">
+      <input [(ngModel)]="decimals" mdInput placeholder="Decimals" type="number" max="18" step="1" min="0">
     </md-input-container>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="Initial Supply" type="number" min="0">
+      <input [(ngModel)]="initialSupply" mdInput placeholder="Initial Supply" (ngModelChange)="onChange($event)" type="number" min="0">
     </md-input-container>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="Initial Supply Holder">
+      <input [(ngModel)]="initialSupplyHolder" [disabled]="initialSupplyHolderDisabled" mdInput placeholder="Initial Supply Holder">
     </md-input-container>
   </md-card-content>
 
