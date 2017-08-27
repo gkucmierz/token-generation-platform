@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-create-token',
@@ -27,6 +28,10 @@ export class CreateTokenComponent implements OnInit {
     this.decimals = null;
     this.initialSupply = null;
     this.initialSupplyHolder = null;
+  }
+
+  generateToken() {
+    console.log('generate token');
   }
 
   ngOnInit() {
