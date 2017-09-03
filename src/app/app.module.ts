@@ -26,6 +26,7 @@ import { FinalizeComponent } from './finalize/finalize.component';
 
 const appRoutes: Routes = [
   { path: 'create-token', component: CreateTokenComponent },
+  { path: 'finalize/:order_id', component: FinalizeComponent },
   { path: '',
     component: HomeComponent
   },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdProgressSpinnerModule } from '@angular/material';
+import { Router } from '@angular/router';
 
 import { DataService } from '../services/data.service';
 
@@ -20,7 +21,8 @@ export class CreateTokenComponent implements OnInit {
 
   public loading: Boolean = false;
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService,
+              private router: Router) { }
 
   onChange(newValue) {
     this.initialSupplyHolderDisabled = this.initialSupply === 0;
@@ -44,8 +46,10 @@ export class CreateTokenComponent implements OnInit {
       initialSupplyHolder: this.initialSupplyHolder
     };
     this.data.post('http://localhost:8081/public/create', data)
-      .subscribe(data => {
-        console.log(data);
+      .subscribe(resp => {
+        console.log();
+        this.router.navigate(['/finalize/' + resp.data.order_id]);
+        // this.router.navigate(['/finalize'], resp.data.order_id);
       });
   }
 
