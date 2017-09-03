@@ -14,7 +14,15 @@
     </md-card>
 
     <md-card>
-      payment qr code
+      <p>
+        Send <b>0.5 ETH</b> to following address in order to create your token.
+      </p>
+      
+      <qr-code [value]="ethProtocol(order.paymentAddress)" [size]="150"></qr-code>
+
+      <p>
+        <b>ETH address:</b> {{order.paymentAddress}}
+      </p>
     </md-card>
 
   </md-card-content>

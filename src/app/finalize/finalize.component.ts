@@ -38,6 +38,10 @@ export class FinalizeComponent implements OnInit {
   constructor(private data: DataService,
               private route: ActivatedRoute) { }
 
+  ethProtocol(address: string) {
+    return `ethereum:${address||''}`;
+  }
+
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       console.log(params);

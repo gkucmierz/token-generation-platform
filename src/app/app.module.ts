@@ -15,6 +15,8 @@ import { MdProgressSpinnerModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 
+import { QRCodeModule } from 'angular2-qrcode';
+
 import 'hammerjs';
 
 import { DataService } from './services/data.service';
@@ -54,6 +56,7 @@ const appRoutes: Routes = [
     MdCardModule,
     FormsModule,
     MdProgressSpinnerModule,
+    QRCodeModule,
 
     RouterModule.forRoot(
       appRoutes
