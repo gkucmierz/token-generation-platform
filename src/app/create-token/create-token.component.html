@@ -4,7 +4,7 @@
     Create Token
   </md-card-title>
 
-  <md-card-content>
+  <md-card-content *ngIf="!loading">
     <md-input-container class="full-width">
       <input [(ngModel)]="tokenName" mdInput placeholder="Token Name">
     </md-input-container>
@@ -26,8 +26,12 @@
     </md-input-container>
   </md-card-content>
 
+  <md-card-content *ngIf="loading">
+    <md-progress-spinner mode="indeterminate"></md-progress-spinner>
+  </md-card-content>
+
   <md-card-actions>
-    <button md-raised-button color="warn" (click)="reset()">Reset</button>
-    <button md-raised-button color="primary" (click)="generateToken()">Generate Token</button>
+    <button md-raised-button color="warn" [disabled]="loading" (click)="reset()">Reset</button>
+    <button md-raised-button color="primary" [disabled]="loading" (click)="generateToken()">Generate Token</button>
   </md-card-actions>
 </md-card>
