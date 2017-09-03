@@ -5,6 +5,17 @@
   </md-card-title>
 
   <md-card-content>
-    token details…
+    <md-card>
+      <h3>Token Details</h3>
+
+      <p *ngFor="let prop of props">
+        <b>{{prop.view}}:</b> {{order[prop.name]}}
+      </p>
+    </md-card>
+
+    <md-card>
+      payment qr code
+    </md-card>
+
   </md-card-content>
 </md-card>
