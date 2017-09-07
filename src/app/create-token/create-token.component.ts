@@ -47,9 +47,15 @@ export class CreateTokenComponent implements OnInit {
     };
     this.data.post('http://localhost:8081/public/create', data)
       .subscribe(resp => {
-        console.log();
-        this.router.navigate(['/finalize/' + resp.data.order_id]);
-        // this.router.navigate(['/finalize'], resp.data.order_id);
+        console.log(resp);
+        if (resp.success) {
+          console.log(resp.data);
+          this.router.navigate(['/finalize/' + resp.data.order_id]);
+          // this.router.navigate(['/finalize'], resp.data.order_id); 
+        } else {
+          alert('failed: ' + resp.error_msg);
+          this.loading = false;
+        }
       });
   }
 

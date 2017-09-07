@@ -10,7 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class FinalizeComponent implements OnInit {
   private sub: any;
-  private order: any;
+  private order: any = {};
   private json: string;
   private props = [
     {
